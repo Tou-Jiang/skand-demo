@@ -17,7 +17,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --fix",
-    "tsc": "tsc",
     "prepare": "husky install"
   },
   "eslintConfig": {
@@ -42,6 +41,7 @@
     "commitizen": "^4.2.4",
     "eslint": "^8.19.0",
     "husky": "^8.0.0",
+    "jest-watch-typeahead": "^0.6.5",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
   },
@@ -51,10 +51,7 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "npm run lint",
-      "npm run test --watchAll=false --findRelatedTests --bail"
-    ],
+    "*.{js,jsx}": "eslint --fix",
     "**/*.{json,css,md}": "prettier --write"
   }
 }
