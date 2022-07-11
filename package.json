@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^8.19.0",
     "husky": "^8.0.0",
     "jest-watch-typeahead": "^0.6.5",
@@ -53,5 +54,10 @@
   "lint-staged": {
     "*.{js,jsx}": "eslint --fix",
     "**/*.{json,css,md}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
