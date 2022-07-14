@@ -23,4 +23,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: pip3 install awscli
-    - run: aws s3 sync ./build s3://skanddemo/
+    - run: aws configure --profile s3-sync-action <<-EOF > /dev/null 2>&1
+          ${AWS_ACCESS_KEY_ID}
+          ${AWS_SECRET_ACCESS_KEY}
+          ${AWS_REGION}
+    - run: aws s3 sync ./build s3://skanddemo/ --profile s3-sync-action
