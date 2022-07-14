@@ -27,4 +27,6 @@ jobs:
           ${AWS_ACCESS_KEY_ID}
           ${AWS_SECRET_ACCESS_KEY}
           ${AWS_REGION}
+          text
+          EOF
     - run: aws s3 sync ./build s3://skanddemo/ --profile s3-sync-action
